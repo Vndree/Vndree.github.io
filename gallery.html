@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #ffcccc;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+      object-fit: cover;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+  <title>Valentines Gallery</title>
+</head>
+<body>
+
+  <div class="gallery" id="imageGallery"></div>
+
+  <script>
+    // Dynamically generate the list of image file names from '1.jpg' to '172.jpg'
+    const imageFileNames = Array.from({ length: 172 }, (_, index) => `C:\\Users\\offic\\Desktop\\Valentines Gift\\valentines\\${index + 1}.jpg`);
+
+    const galleryContainer = document.getElementById('imageGallery');
+
+    // Dynamically add images to the gallery
+    imageFileNames.forEach((filePath, index) => {
+      const imageElement = document.createElement('img');
+      imageElement.src = filePath;
+      imageElement.alt = `Image ${index + 1}`;
+      galleryContainer.appendChild(imageElement);
+    });
+  </script>
+
+</body>
+</html>
