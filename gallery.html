@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,24 +36,26 @@
   </style>
   <title>Valentines Gallery</title>
 </head>
+
 <body>
 
   <div class="gallery" id="imageGallery"></div>
 
   <script>
-    // Dynamically generate the list of image file names from '1.jpg' to '172.jpg'
-    const imageFileNames = Array.from({ length: 172 }, (_, index) => `C:\\Users\\offic\\Desktop\\Valentines Gift\\valentines\\${index + 1}.jpg`);
+    // Dynamically generate the list of image URLs from GitHub repository
+    const imageFileNames = Array.from({ length: 172 }, (_, index) => `https://raw.githubusercontent.com/Vndree/Vndree.github.io/main/valentines/${index + 1}.jpg`);
 
     const galleryContainer = document.getElementById('imageGallery');
 
     // Dynamically add images to the gallery
-    imageFileNames.forEach((filePath, index) => {
+    imageFileNames.forEach((url, index) => {
       const imageElement = document.createElement('img');
-      imageElement.src = filePath;
+      imageElement.src = url;
       imageElement.alt = `Image ${index + 1}`;
       galleryContainer.appendChild(imageElement);
     });
   </script>
 
 </body>
+
 </html>
